@@ -1,19 +1,19 @@
-// function noteList() {
+function noteList() {
  
-//  var noteListdouble = new NoteList;
-//  noteListdouble.create("hello!")
-//  var controller = new NoteController(noteListdouble)
-//  assert(controller.noteList.returnList()[0] === noteListdouble,
-//    "returns a note list object as a string")
-// }
+ var noteListdouble = new NoteList;
+ var controller = new NoteController(noteListdouble)
+ assert(controller instanceof NoteController,
+   "returns a note list object as a string")
+}
 
-// noteList()
+noteList()
 
 function insertIntoHTMLtest() {
-  var noteList = {text: ["Favourite drink: seltzer"]}
-  var controller = new NoteController(noteList);
-  controller.insertIntoHTML()
-  assert(document.getElementById("app") === "Favourite drink: seltzer",
+  var noteList = new NoteList
+  var controller1 = new NoteController(noteList);
+  controller1.insertIntoHTML()
+  console.log(document.getElementById("app").innerHTML)
+  assert(document.getElementById("app").innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>",
   "returns an item of the list on the HTML page")
 }
 
