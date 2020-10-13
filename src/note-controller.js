@@ -7,8 +7,8 @@ class NoteController {
   }
 
   insertIntoHTML() {
-      var html = this.noteListView.outputToHtml()
-      var element = document.getElementById("app")
+    var html = this.noteListView.outputToHtml()
+    var element = document.getElementById("app")
     element.innerHTML = html
   }
 
