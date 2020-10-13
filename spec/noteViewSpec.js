@@ -10,17 +10,6 @@ function noteListViewHtml() {
 
 noteListViewHtml();
 
-// function checkHTMLlink() {
-//     var noteList = new NoteList
-//     noteList.create("Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.")
-
-//     var noteListView = new NoteListView(noteList)
-
-//     assert(noteListView.outputToHtml() === "<ul><li><div>Lorem ipsum, or lips</div></li></ul>",
-//         "Only print out 20 characters of the note")
-// }
-// checkHTMLlink();
-
 function checkHTMLlength() {
     var noteList = new NoteList
     noteList.create("Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.")
@@ -29,3 +18,15 @@ function checkHTMLlength() {
         "Only print out 20 characters of the note")
 }
 checkHTMLlength();
+
+
+function checkHTMLlink() {
+    var noteList = new NoteList
+    noteList.create("Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.")
+
+    var noteListView = new NoteListView(noteList)
+
+    assert(noteListView.outputToHtml() === "<ul><li><div>Lorem ipsum, or lips</div></li></ul>",
+        "Only print out 20 characters of the note")
+}
+checkHTMLlink();
