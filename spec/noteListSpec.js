@@ -8,7 +8,8 @@ function createNoteList(){
     var noteList = new NoteList
     var string = "This is a test"
     noteList.create(string)
-    assert(noteList.returnList()[0] === "This is a test", "test that string can be created into NoteList" )
+    assert(noteList.returnList()[0] === "This is a test", 
+    "test that string can be created into NoteList" )
 }
 
 
