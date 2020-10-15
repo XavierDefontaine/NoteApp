@@ -18,7 +18,7 @@ class NoteListView {
 
     outputToHtml() {
         var listView = this.returnListView()
-        var html = []
+        var html = []   
         for(var i = 0; i < listView.length; i++) {
             html.push("<li><div>" + listView[i].substring(0, 20) + "</div></li>")
         }
