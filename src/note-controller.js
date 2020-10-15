@@ -4,6 +4,19 @@ class NoteController {
     this.noteListView = new NoteListView(noteList);
   }
 
+  addNote(text) {
+    this.noteList.create(text);
+  }
+
+  getSubmittedText() {
+    document
+      .getElementById("text")
+      .addEventListener("submit", function (event, callback) {
+        event.preventDefault();
+        callback(event.target[0].value);
+      });
+  }
+
   insertIntoHTML() {
     var html = this.noteListView.outputToHtml();
     var element = document.getElementById("app");
