@@ -8,12 +8,16 @@ function noteList() {
 
 noteList()
 
-function insertIntoHTMLtest() {
+
+function renderSingleNotetest() {
   var noteList = new NoteList
+  noteList.create("this a test which is more than 20 char")
   var controller1 = new NoteController(noteList);
-  var test = controller1.insertIntoHTML()
-  assert(document.getElementById("app").innerHTML === "<ul><li><div>Favourite drink: sel</div></li></ul>",
-  "returns an item of the list on the HTML page")
+  controller1.insertIntoHTML()
+  document.getElementById("0").click()
+  controller1.renderSingleNote()
+  assert(document.getElementById("app").innerHTML == "<div>this a test which is more than 20 char</div>", 
+  "render a single note clicked")
 }
 
-insertIntoHTMLtest();
+renderSingleNotetest()

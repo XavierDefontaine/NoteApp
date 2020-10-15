@@ -5,7 +5,7 @@ function noteListViewHtml() {
   var noteListView = new NoteListView(noteList);
   assert(
     noteListView.outputToHtml() ===
-      "<ul><li><div>hello</div></li><li><div>bye</div></li></ul>",
+      "<ul><li><div><a href='#notes/0'id='0'>hello</a></div></li><li><div><a href='#notes/1'id='1'>bye</a></div></li></ul>",
     "Can Test output to HTML"
   );
 }
@@ -33,7 +33,7 @@ function checkHTMLlink() {
   var noteListView = new NoteListView(noteList);
   assert(
     noteListView.outputToHtml() ===
-      "<ul><li><div><a href='#notes/0'>Lorem ipsum, or lips</a></div></li></ul>",
+      "<ul><li><div><a href='#notes/0'id='0'>Lorem ipsum, or lips</a></div></li></ul>",
     "Only print out 20 characters of the note"
   );
 }

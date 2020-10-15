@@ -21,9 +21,10 @@ class NoteListView {
     var html = [];
     for (var i = 0; i < listView.length; i++) {
       html.push(
+        // <a href='#notes/0' id="0" '>
         "<li><div><a href='#notes/" +
           listView[i].id +
-          "'>" +
+          "'"+ "id='" + listView[i].id + "'" + ">" +
           listView[i].text.substring(0, 20) +
           "</a></div></li>"
       );
