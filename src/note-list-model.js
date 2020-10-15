@@ -1,6 +1,7 @@
 class NoteList{
     constructor(){
         this.list = []
+        this.noteID = 0
     }
 
 
@@ -9,8 +10,9 @@ class NoteList{
     }
 
     create(string){
-        var note = new Note(string)
-        this.list.push(note.returnText())
+        var note = new Note(string, this.noteID)
+        this.list.push(note)
+        this.noteID++
     }
 
 }

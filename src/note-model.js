@@ -1,6 +1,7 @@
 class Note {
-    constructor(string) {
+    constructor(string, id = null) {
         this.text = string
+        this.id = id
     }
 
     returnText() {
