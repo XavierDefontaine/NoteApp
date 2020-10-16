@@ -1,3 +1,23 @@
+var noteList;
+var noteController;
+document.addEventListener("DOMContentLoaded", function () {
+  noteList = new NoteList();
+  noteController = new NoteController(noteList);
+  window.addEventListener("submit", function (event) {
+    event.preventDefault();
+    noteController.addNote(document.getElementById("new_note").value);
+    noteController.insertIntoHTML();
+  });
+  window.addEventListener("hashchange", function () {
+    noteController.insertIntoHTMLNote(
+      "app",
+      noteController.singleNoteHTML(
+        noteController._getNoteModel(noteController._idFromURL())
+      )
+    );
+  });
+});
+
 class NoteController {
   constructor(noteList) {
     this.noteList = noteList;
@@ -8,12 +28,15 @@ class NoteController {
     this.noteList.create(text);
   }
 
-  getSubmittedText() {
+  getSubmittedText(callback) {
+    let message;
     document
       .getElementById("text")
-      .addEventListener("submit", function (event, callback) {
+      .addEventListener("submit", function (event) {
         event.preventDefault();
-        callback(event.target[0].value);
+        message = document.getElementById("new_note").value;
+        console.log(message);
+        callback(message);
       });
   }
 
